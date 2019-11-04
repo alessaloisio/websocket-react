@@ -25,6 +25,14 @@
   "homepage": "https://github.com/alessaloisio/websocket-react#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "forever": "^1.0.0",
     "ws": "^7.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "nodemon": "^1.19.4"
   }
 }
