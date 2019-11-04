@@ -4,7 +4,10 @@
   "description": "Create a server with websocket and a client with React deployable on Heroku",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "babel-node src/server.js",
+    "start": "node dist/server.js",
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
@@ -25,14 +28,12 @@
   "homepage": "https://github.com/alessaloisio/websocket-react#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "forever": "^1.0.0",
-    "ws": "^7.2.0"
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
-    "nodemon": "^1.19.4"
+    "@babel/preset-env": "^7.6.3"
   }
 }

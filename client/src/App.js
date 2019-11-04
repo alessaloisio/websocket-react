@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
-function App() {
+import logo from "./logo.svg";
+import "./App.css";
+
+import io from "socket.io-client";
+const socket = io(":3000");
+const getUpdateTime = cb => {
+  socket.on("updateTime", time => cb(null, time));
+};
+
+const App = () => {
+  const [Time, setTime] = useState(null);
+
+  useEffect(() => {
+    getUpdateTime((err, time) => {
+      setTime(time);
+    });
+  }, [Time]);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{Time}</p>
       </header>
     </div>
   );
-}
+};
 
 export default App;
