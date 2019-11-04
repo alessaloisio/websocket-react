@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "babel-node src/server.js",
     "start": "node dist/server.js",
-    "build": "babel src -d dist & npm run build --prefix client"
+    "build": "babel src -d dist & npm install --prefix client & npm run build --prefix client"
   },
   "repository": {
     "type": "git",
