@@ -8,7 +8,7 @@
     "dev": "babel-node src/server.js",
     "start": "node dist/server.js",
     "build": "babel src -d dist",
-    "heroku-prebuild": "npm install --prefix client",
+    "heroku-prebuild": "npm run build & npm install --prefix client",
     "heroku-postbuild": "npm run build --prefix client"
   },
   "repository": {
