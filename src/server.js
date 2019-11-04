@@ -6,6 +6,8 @@ import path from "path";
 const PORT = process.env.PORT || 3000;
 const STATIC_DIR = path.join(__dirname, "../", "client", "build");
 
+console.log(STATIC_DIR);
+
 const app = express();
 const server = http.Server(app);
 const io = socket(server);
