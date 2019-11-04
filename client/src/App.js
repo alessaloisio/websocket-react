@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import io from "socket.io-client";
-const socket = io(":3000");
+const socket = io();
 const getUpdateTime = cb => {
   socket.on("updateTime", time => cb(null, time));
 };
